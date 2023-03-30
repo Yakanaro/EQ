@@ -16,28 +16,23 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased">
-    <div id="app" class="flex flex-col h-screen justify-between">
-
-        <!-- Page Heading -->
-        <header class="fixed w-full">
+<body class="font-sans antialiased h-full">
+    <div id="app" class="flex flex-col h-screen justify-between max-w-screen-xl mx-auto">
+{{--        <header class="fixed w-full">--}}
+{{--            @include('layouts.navigation')--}}
+{{--        </header>--}}
+        <header class="">
             @include('layouts.navigation')
         </header>
 
-        <!-- Page Content -->
-        <section class="bg-white">
-            <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
-                <div class="grid col-span-full">
-                    @yield('content')
-                </div>
-                <div>
-                    @yield('columns')
-                </div>
-            </div>
-        </section>
-        <div class="mt-auto">
+        <main class="">
+            @yield('content')
+        </main>
+
+        <footer class="">
             @yield('footer')
-        </div>
+        </footer>
     </div>
+
 </body>
 </html>
