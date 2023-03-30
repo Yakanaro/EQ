@@ -15,6 +15,9 @@ module.exports = {
       fontFamily: {
         sans: ['Nunito', ...defaultTheme.fontFamily.sans],
       },
+      backgroundImage: {
+        'background' : "url('https://www.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_16359095.htm')"
+      }
     },
   },
 
