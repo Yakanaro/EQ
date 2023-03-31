@@ -29,3 +29,8 @@ Route::get('progress', function (){
     return view('progress');
 }
 )->name('progress');
+
+Route::get('lessons', function (){
+    return view('lessons');
+}
+)->name('lessons');

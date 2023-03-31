@@ -23,7 +23,7 @@
     </header>
 
     <div class="">
-        @include('layouts.user.TestSideBar')
+        @include('layouts.user.UserLessons')
     </div>
 
     <footer>
