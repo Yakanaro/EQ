@@ -19,3 +19,13 @@ Route::get(
         return view('index');
     }
 )->name('index');
+
+Route::get('me', function (){
+    return view('user');
+}
+)->name('me');
+
+Route::get('progress', function (){
+    return view('progress');
+}
+)->name('progress');

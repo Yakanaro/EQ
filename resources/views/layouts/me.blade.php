@@ -17,26 +17,19 @@
 </head>
 
 <body class="font-sans antialiased h-full" style="background-image: url('https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg?w=2000&t=st=1680194193~exp=1680194793~hmac=99700f4ff20f27ce2142a52e066b39ea4e4e22a449fbe47962b791d794197458');">
-    <div id="app" class="flex flex-col h-screen max-w-screen-xl mx-auto">
-{{--        <header class="fixed w-full">--}}
-{{--            @include('layouts.navigation')--}}
-{{--        </header>--}}
-        <header class="">
-            @include('layouts.navigation')
-        </header>
-
-        <main class="mt-[100px]">
-            @yield('content')
-        </main>
-
-        <div class="mb-[10px] mt-[150px]">
-            @yield('columns')
-        </div>
-
-        <footer class="">
-            @yield('footer')
-        </footer>
-
+<div class="flex flex-col h-screen max-w-screen-xl mx-auto">
+    {{--        <header class="fixed w-full">--}}
+    {{--            @include('layouts.navigation')--}}
+    {{--        </header>--}}
+    <header class="">
+        @include('layouts.navigation')
+    </header>
+    <div class="">
+        @yield('user')
     </div>
+    <footer>
+        @yield('footer')
+    </footer>
+</div>
 </body>
 </html>

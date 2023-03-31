@@ -1,3 +1,4 @@
+
 @section('footer')
     <footer class="bg-transparent text-center dark:bg-secondary-600">
         <div class="px-6 pt-6">
