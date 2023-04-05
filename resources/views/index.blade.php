@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @extends('layouts.columns')
-@extends('layouts.footer')
 
 
 @section('content')

@@ -1,6 +1,4 @@
-
-@section('footer')
-    <footer class="bg-transparent text-center">
+ <footer class="bg-transparent text-center">
         <div class="px-6 pt-6">
             <form action="">
                 <div class="gird-cols-1 grid items-center justify-center gap-4 md:grid-cols-3">
@@ -43,4 +41,3 @@
             </a>
         </div>
     </footer>
-@endsection

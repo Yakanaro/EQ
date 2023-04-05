@@ -9,6 +9,15 @@
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
+        <div class="mt-4">
+            <x-input-label for="surname" :value="__('Surname')" />
+
+            <x-text-input id="surname" class="block mt-1 w-full"
+                          type="text" name="surname"
+                          :value="old('surname')" required autofocus />
+            <x-input-error :messages="$errors->get('surname')" class="mt-2" />
+        </div>
+
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
@@ -44,9 +53,9 @@
                 {{ __('Already registered?') }}
             </a>
 
-            <x-primary-button class="ml-4 bg-gradient-to-r from-green-400 to-blue-500">
+            <x-button class="ml-4 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600">
                 {{ __('Register') }}
-            </x-primary-button>
+            </x-button>
         </div>
     </form>
 </x-guest-layout>

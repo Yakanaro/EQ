@@ -1,3 +1,4 @@
+
  <div class="bg-transparent p-1 grid grid-cols-3 gap-6 px-20 py-10 pt-1 mx-10 h-[50]">
 
         <div class="bg-white text-black text-center text-5xl py-10 rounded-3xl">

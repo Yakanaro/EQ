@@ -22,12 +22,13 @@
         @include('layouts.navigation')
     </header>
 
-    <div class="">
+    <div class="flex">
         @include('layouts.user.AsideUserProfile')
+        @include('layouts.user.UserSettings')
     </div>
 
     <footer>
-        @yield('footer')
+        @include('layouts.footer')
     </footer>
 </div>
 </body>

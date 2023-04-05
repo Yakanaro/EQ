@@ -13,24 +13,27 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <script src="https://unpkg.com/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+
+        <!-- Подключение библиотеки Alpine.js -->
+        <script src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script>
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+    <body class="font-sans antialiased h-full">
+        <div class="flex flex-col h-screen max-w-screen-xl mx-auto">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
+            <main class="mt-[100px]">
+                @yield('content')
             </main>
+
+            <div class="mb-[10px] mt-[150px]">
+                @yield('columns')
+            </div>
+
+            <footer>
+                @include('layouts.footer')
+            </footer>
         </div>
     </body>
 </html>

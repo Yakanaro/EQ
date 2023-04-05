@@ -27,8 +27,9 @@
     <div class="">
         @yield('user')
     </div>
+
     <footer>
-        @yield('footer')
+        @include('footer')
     </footer>
 </div>
 </body>
