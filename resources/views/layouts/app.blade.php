@@ -1,42 +1,36 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="csrf-param" content="_token">
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <title>EQ</title>
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-
-<body class="font-sans antialiased h-full" style="background-image: url('https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg?w=2000&t=st=1680194193~exp=1680194793~hmac=99700f4ff20f27ce2142a52e066b39ea4e4e22a449fbe47962b791d794197458');">
-    <div id="app" class="flex flex-col h-screen max-w-screen-xl mx-auto">
-{{--        <header class="fixed w-full">--}}
-{{--            @include('layouts.navigation')--}}
-{{--        </header>--}}
-        <header class="">
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    <body class="font-sans antialiased">
+        <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
-        </header>
 
-        <main class="mt-[100px]">
-            @yield('content')
-        </main>
+            <!-- Page Heading -->
+            @if (isset($header))
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
 
-        <div class="mb-[10px] mt-[150px]">
-            @yield('columns')
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
         </div>
-
-        <footer class="">
-            @yield('footer')
-        </footer>
-
-    </div>
-</body>
+    </body>
 </html>

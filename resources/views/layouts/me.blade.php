@@ -16,7 +16,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased h-full" style="background-image: url('https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg?w=2000&t=st=1680194193~exp=1680194793~hmac=99700f4ff20f27ce2142a52e066b39ea4e4e22a449fbe47962b791d794197458');">
+<body class="font-sans antialiased h-full" style="background-image: url('https://cdn.pixabay.com/photo/2016/11/05/12/38/fuzzy-1800136_1280.jpg');">
 <div class="flex flex-col h-screen max-w-screen-xl mx-auto">
     {{--        <header class="fixed w-full">--}}
     {{--            @include('layouts.navigation')--}}

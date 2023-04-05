@@ -1,29 +1,20 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
-/**
- * @type {import('tailwindcss').Config}
- */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-    './storage/framework/views/*.php',
-    './resources/views/**/*.blade.php',
-    './node_modules/flowbite/**/*.js'
-  ],
+    content: [
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        './storage/framework/views/*.php',
+        './resources/views/**/*.blade.php',
+    ],
 
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-      },
-      backgroundImage: {
-        'background' : "url('https://www.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_16359095.htm')"
-      }
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+            },
+        },
     },
-  },
 
-  // plugins: [require('@tailwindcss/forms')],
-  plugins: [
-    require('flowbite/plugin')
-  ],
+    plugins: [require('@tailwindcss/forms')],
 };
