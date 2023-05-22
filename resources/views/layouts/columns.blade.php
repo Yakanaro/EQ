@@ -94,7 +94,7 @@
             <p class="text-lg pt-5">Преодолеть страхи и начать развивать свой лидерский потенциал</p>
         </div>
     </div>
-    <div class="text-center pt-6">
+    <div class="text-center pt-6 mb-10">
         <a href="{{ route('register') }}" class="mb-7 text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-3xl text-lg px-7 py-3.5 text-center mr-1 mb-1 max-w-50">
             Пройти диагностику
         </a>

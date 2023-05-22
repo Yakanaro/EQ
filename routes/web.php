@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\StatementsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +26,15 @@ Route::get('/me', function () {
 Route::get('settings', function () {
     return view('settings', ['user' => Auth::user()]);
 });
+
+Route::get('/questions', function () {
+    return view('questions');
+});
+
+Route::get('/statements/create', 'App\Http\Controllers\StatementsController@create')->name('statements.create');
+Route::post('/statements', 'StatementsController@store')->name('statements.store');
+//Route::match(['get', 'post'], '/statements', 'App\Http\Controllers\StatementsController@store')->name('statements.store');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

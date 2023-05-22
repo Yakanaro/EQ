@@ -18,3 +18,5 @@ yarn-error.log
 /.idea
 /.vscode
 TODO
+/.DS_Store
+.DS_Store
