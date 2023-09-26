@@ -6,6 +6,11 @@
             {{ session('message') }}
         </div>
     @endif
+    <button type="button"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            onclick="window.location='{{ route('admin.index') }}'">
+        Назад
+    </button>
     <form method="POST" action="{{route('theory.store')}}">
         @csrf
         <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Выберите к какому блоку относится теория </label>
