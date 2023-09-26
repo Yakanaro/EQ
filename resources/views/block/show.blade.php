@@ -27,7 +27,7 @@
             <strong>Задание:</strong>
         </p>
         <label for="message" class="block mt-1 sm:mt-2 text-sm sm:text-base font-medium text-gray-900 dark:text-white">
-            <strong>{{$theory->assignment}}</strong>
+            <strong>{!! nl2br(e($theory->theory_content)) !!}</strong>
         </label>
         <textarea id="message" rows="4" class="block p-2.5 w-full text-sm sm:text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите ваш ответ здесь ..." required></textarea>
         <hr class="w-32 sm:w-48 h-1 mx-auto my-3 sm:my-4 bg-gray-100 border-0 rounded md:my-6 ">
