@@ -12,6 +12,9 @@ php artisan config:cache
 echo "Caching routes..."
 php artisan route:cache
 
+echo "Install Node.js"
+sudo apt install nodejs npm
+
 echo "Install NPM"
 npm install
 
