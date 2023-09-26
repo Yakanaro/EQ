@@ -2,11 +2,6 @@ FROM richarvey/nginx-php-fpm:3.1.6
 
 COPY . .
 
-RUN apt-get update && apt-get install -y \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
-
-# Установка Node.js с помощью NVM
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 14.17.6
 
