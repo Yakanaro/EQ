@@ -12,5 +12,8 @@ php artisan config:cache
 echo "Caching routes..."
 php artisan route:cache
 
+echo "Install NPM"
+npm install
+
 echo "Building frontend assets with Vite..."
 npm run build
