@@ -5,7 +5,7 @@
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">EQ</span>
         </a>
         <div class="flex md:order-2">
-            @if(auth()->user()->is_admin)
+            @if(auth()->check() && auth()->user()->is_admin)
                 <a href="{{ route('admin.index') }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Админ-панель</a>
             @endif
             @guest
