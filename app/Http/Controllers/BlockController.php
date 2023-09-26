@@ -26,23 +26,27 @@ class BlockController extends Controller
 
     public function edit(Block $block)
     {
-        return view('block.edit', ['block' => $block]);
+        $blocks = Block::all();
+        return view('block.edit', ['block' => $block, 'blocks' => $blocks]);
     }
 
     public function update(Request $request, Block $block)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+        $block->update([
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
         ]);
 
-        $block->title = $request->title;
-        $block->description = $request->description;
-        $block->save();
+        // Обновите информацию о связанных теориях
+        foreach ($block->theories as $theory) {
+            $theory->update([
+                'block_id' => $request->input('block_id_' . $theory->id),
+                'theory_content' => $request->input('theory_content_' . $theory->id),
+                'assignment' => $request->input('assignment_' . $theory->id),
+            ]);
+        }
 
-        session()->flash('message', 'Блок успешно обновлен.');
-
-        return redirect()->route('block.index');
+        return redirect()->route('admin.index')->with('message', 'Блок и теории успешно обновлены.');
     }
 
     public function index(){
