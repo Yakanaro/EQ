@@ -21,7 +21,7 @@
     @endif
     @foreach($block->theories as $theory)
         <div>
-            {{$theory->theory_content}}
+            {!! nl2br(e($theory->theory_content)) !!}
         </div>
         <p class="mt-2 sm:mt-3">
             <strong>Задание:</strong>
