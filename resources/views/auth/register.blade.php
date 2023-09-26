@@ -18,6 +18,13 @@
             <x-input-error :messages="$errors->get('surname')" class="mt-2" />
         </div>
 
+{{--        age--}}
+        <div class="mt-4">
+            <x-input-label for="age" :value="__('Возраст')" />
+            <x-text-input id="age" class="block mt-1 w-full" type="number" name="age" :value="old('age')" required />
+            <x-input-error :messages="$errors->get('age')" class="mt-2" />
+        </div>
+
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
@@ -39,7 +46,7 @@
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Потдвердите пароль')" />
+            <x-input-label for="password_confirmation" :value="__('Подтвердите пароль')" />
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
                             type="password"

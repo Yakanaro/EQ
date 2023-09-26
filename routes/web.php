@@ -1,9 +1,14 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlockController;
+use App\Http\Controllers\DiagnosticsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TheoryController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StatementsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +24,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/me', function () {
+Route::get('blocks/index', function () {
     return view('user', ['user' => Auth::user()]);
 })->middleware(['auth', 'verified'])->name('me');
 
@@ -31,10 +36,39 @@ Route::get('/questions', function () {
     return view('questions');
 });
 
+Route::group([
+    'prefix' => 'users',
+    'as' => 'users.',
+], function () {
+    Route::get('users', [UserController::class, 'index'])->name('index');
+});
+
+
+Route::get('theory/create', [TheoryController::class, 'create'])->name('theory.create');
+Route::post('theory', [TheoryController::class, 'store'])->name('theory.store');
+
+Route::get('admin', [AdminController::class, 'index'])->name('admin.index');
+
+Route::get('block/create', [BlockController::class, 'create'])->name('block.create');
+Route::get('blocks/{block}/edit', [BlockController::class, 'edit'])->name('block.edit');
+Route::put('block/{block}', [BlockController::class, 'update'])->name('block.update');
+Route::post('block', [BlockController::class, 'store'])->name('block.store');
+Route::get('blocks/index', [BlockController::class, 'index'])->name('blocks.index');
+Route::get('/blocks/{id}', [BlockController::class, 'show'])->name('blocks.show');
+Route::post('blocks/{block}/complete', [BlockController::class, 'complete'])->name('blocks.complete');
+
+Route::group([
+    'prefix' => 'diagnostic',
+    'as' => 'diagnostic.',
+], function () {
+    Route::get('', [DiagnosticsController::class, 'index'])->name('index');
+    Route::get('sectionA', [DiagnosticsController::class, 'indexA'])->name('sectionA');
+    Route::get('sectionB', [DiagnosticsController::class, 'indexB'])->name('sectionB');
+    Route::get('sectionC', [DiagnosticsController::class, 'indexC'])->name('sectionС.indexС');
+});
+
 Route::get('/statements/create', 'App\Http\Controllers\StatementsController@create')->name('statements.create');
 Route::post('/statements', 'StatementsController@store')->name('statements.store');
-//Route::match(['get', 'post'], '/statements', 'App\Http\Controllers\StatementsController@store')->name('statements.store');
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -42,4 +76,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

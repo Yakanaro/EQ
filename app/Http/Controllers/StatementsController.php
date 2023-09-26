@@ -7,13 +7,13 @@ use App\Models\Statement;
 
 class StatementsController extends Controller
 {
-    public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    public function create()
     {
         $statement = new Statement();
         return view('statements.create', compact('statement'));
     }
 
-    public function store(Request $request): \Illuminate\Http\RedirectResponse
+    public function store(Request $request)
     {
         $data = $this->validate($request, [
             'statement' => 'required|unique:articles',

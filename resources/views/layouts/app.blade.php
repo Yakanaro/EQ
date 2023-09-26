@@ -16,24 +16,20 @@
         <script src="https://unpkg.com/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 
         <!-- Подключение библиотеки Alpine.js -->
-        <script src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script>
+        <script src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js" defer></script>
     </head>
     <body class="font-sans antialiased h-full">
-        <div class="flex flex-col h-screen max-w-screen-xl mx-auto">
+        <div class="flex flex-col h-full max-w-screen-xl mx-auto">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
-            <main class="mt-[100px]">
+            <main class="mt-[40px] h-full">
                 @yield('content')
             </main>
 
-            <div class="mb-[10px] mt-[150px]">
-                @yield('columns')
-            </div>
-
-            <footer>
-                @include('layouts.footer')
-            </footer>
+{{--            <footer>--}}
+{{--                @include('layouts.footer')--}}
+{{--            </footer>--}}
         </div>
     </body>
 </html>
