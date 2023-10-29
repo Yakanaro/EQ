@@ -21,7 +21,7 @@ class BlockController extends Controller
 
         session()->flash('message', 'Блок успешно сохранен.');
 
-        return redirect()->route('block.create');
+        return redirect()->route('block.create')->with('message', 'Блок успешно сохранен.');
     }
 
     public function edit(Block $block)

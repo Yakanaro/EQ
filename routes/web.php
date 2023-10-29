@@ -43,9 +43,9 @@ Route::group([
     Route::get('users', [UserController::class, 'index'])->name('index');
 });
 
-
 Route::get('theory/create', [TheoryController::class, 'create'])->name('theory.create');
 Route::post('theory', [TheoryController::class, 'store'])->name('theory.store');
+Route::put('theory/update', [TheoryController::class, 'update'])->name('theory.update');
 
 Route::get('admin', [AdminController::class, 'index'])->name('admin.index');
 

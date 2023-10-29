@@ -30,5 +30,21 @@ class TheoryController extends Controller
         return redirect()->route('theory.create')->with('message', 'Теория успешно сохранена.');
     }
 
+    public function update(Request $request, Theory $theory)
+    {
+        $request->validate([
+            'block_id' => 'required|exists:blocks,id',
+            'theory_content' => 'required',
+            'assignment' => 'required',
+        ]);
 
+        $theory->block_id = $request->block_id;
+        $theory->theory_content = $request->theory_content;
+        $theory->assignment = $request->assignment;
+        $theory->save();
+
+        session()->flash('message', 'Теория успешно обновлен.');
+
+        return redirect()->route('block.index');
+    }
 }
