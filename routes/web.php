@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlockController;
 use App\Http\Controllers\DiagnosticsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StatementsController;
 use App\Http\Controllers\TheoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -67,8 +68,8 @@ Route::group([
     Route::get('sectionC', [DiagnosticsController::class, 'indexC'])->name('sectionС.indexС');
 });
 
-Route::get('/statements/create', 'App\Http\Controllers\StatementsController@create')->name('statements.create');
-Route::post('/statements', 'StatementsController@store')->name('statements.store');
+Route::get('/statements/create', [StatementsController::class, 'create'])->name('statements.create');
+Route::post('/statements', [StatementsController::class, 'store'])->name('statements.store');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
