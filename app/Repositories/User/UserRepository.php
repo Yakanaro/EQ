@@ -3,10 +3,10 @@
 namespace App\Repositories\User;
 
 use App\Models\User;
-use Illuminate\Support\Collection;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-use App\Repositories\User\Dto\UpdateUserDto;
 use App\Repositories\User\Dto\GetAllUserDto;
+use App\Repositories\User\Dto\UpdateUserDto;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Collection;
 
 class UserRepository implements UserRepositoryInterface
 {

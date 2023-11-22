@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Block\StoreBlockRequest;
-use App\Http\Requests\Block\UpdateBlockRequest; 
+use App\Http\Requests\Block\UpdateBlockRequest;
 use App\Models\Block;
 use App\Models\UserBlock;
-use Illuminate\Http\Request;
 use App\Repositories\BlockRepository\BlockRepository;
 use App\Repositories\BlockRepository\Dto\StoreBlockDto;
-use App\Repositories\BlockRepository\Dto\UpdateBlockDto; 
+use App\Repositories\BlockRepository\Dto\UpdateBlockDto;
+use Illuminate\Http\Request;
 
 class BlockController extends Controller
 {

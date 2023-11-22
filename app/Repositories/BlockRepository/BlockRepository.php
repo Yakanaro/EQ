@@ -2,8 +2,8 @@
 
 namespace App\Repositories\BlockRepository;
 
-use App\Repositories\BlockRepository\Dto\StoreBlockDto;
 use App\Models\Block;
+use App\Repositories\BlockRepository\Dto\StoreBlockDto;
 use App\Repositories\BlockRepository\Dto\UpdateBlockDto;
 use Illuminate\Database\Eloquent\Collection;
 
