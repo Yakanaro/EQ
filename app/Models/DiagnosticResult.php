@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Statement extends Model
+class DiagnosticResult extends Model
 {
     use HasFactory;
 
-    protected $table = 'statements';
     protected $fillable = [
-        'statement',
+        'statement_id',
+        'user_id',
+        'response',
     ];
 }

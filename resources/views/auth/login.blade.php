@@ -32,16 +32,23 @@
             </label>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div class="flex items-center justify-end mt-4 space-x-2">
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
                     {{ __('Забыли пароль?') }}
                 </a>
             @endif
 
+            <span class="text-gray-600">|</span>
+
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
+                {{ __('Регистрация') }}
+            </a>
+
             <x-primary-button class="ml-3">
                 {{ __('Войти') }}
             </x-primary-button>
         </div>
+
     </form>
 </x-guest-layout>

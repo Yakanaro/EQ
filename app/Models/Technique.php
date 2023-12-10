@@ -5,12 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Statement extends Model
+class Technique extends Model
 {
     use HasFactory;
 
-    protected $table = 'statements';
-    protected $fillable = [
-        'statement',
-    ];
+    protected $fillable = ['description'];
 }

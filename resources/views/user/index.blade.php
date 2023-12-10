@@ -42,6 +42,11 @@
                     <td class="px-6 py-4">
                         {{$user->email}}
                     </td>
+                    <td class="px-6 py-4">
+                        @foreach($user->blocks->where('status', 'completed') as $block)
+                            {{$block->title}}
+                        @endforeach
+                    </td>
                 </tr>
             @endforeach
             </tbody>

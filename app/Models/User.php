@@ -48,4 +48,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(UserBlock::class);
     }
+
+    public function status_blocks()
+    {
+        return $this->belongsToMany(Block::class, 'user_blocks')->withPivot('status');
+    }
 }

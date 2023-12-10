@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlockController;
+use App\Http\Controllers\DiagnosticResultController;
 use App\Http\Controllers\DiagnosticsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StatementsController;
+use App\Http\Controllers\TechniqueController;
 use App\Http\Controllers\TheoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -52,7 +54,7 @@ Route::get('admin', [AdminController::class, 'index'])->name('admin.index');
 
 Route::get('block/create', [BlockController::class, 'create'])->name('block.create');
 Route::get('blocks/{block}/edit', [BlockController::class, 'edit'])->name('block.edit');
-Route::put('block/{block}', [BlockController::class, 'update'])->name('block.update');
+Route::post('block/{block}', [BlockController::class, 'update'])->name('block.update');
 Route::post('block', [BlockController::class, 'store'])->name('block.store');
 Route::get('blocks/index', [BlockController::class, 'index'])->name('blocks.index');
 Route::get('/blocks/{id}', [BlockController::class, 'show'])->name('blocks.show');
@@ -63,6 +65,7 @@ Route::group([
     'as' => 'diagnostic.',
 ], function () {
     Route::get('', [DiagnosticsController::class, 'index'])->name('index');
+    Route::get('diagnostics', [DiagnosticsController::class, 'diagnostics'])->name('diagnostics')->middleware('auth');
     Route::get('sectionA', [DiagnosticsController::class, 'indexA'])->name('sectionA');
     Route::get('sectionB', [DiagnosticsController::class, 'indexB'])->name('sectionB');
     Route::get('sectionC', [DiagnosticsController::class, 'indexC'])->name('sectionС.indexС');
@@ -76,5 +79,17 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::post('/diagnostic/store', [DiagnosticResultController::class, 'store'])->name('diagnostic.store');
+
+Route::prefix('techniques')->as('techniques.')->group(function () {
+    Route::get('create', [TechniqueController::class, 'create'])->name('create');
+    Route::post('store', [TechniqueController::class, 'store'])->name('store');
+});
+
+
+Route::get('/me', function () {
+    return view('user.me');
+})->name('me')->middleware('auth');
 
 require __DIR__ . '/auth.php';

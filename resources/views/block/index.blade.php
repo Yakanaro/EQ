@@ -11,7 +11,7 @@
         @foreach($blocks as $block)
             <div class="max-w-fit bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="{{ route('blocks.show', $block->id) }}">
-                    <img class="rounded-t-lg" src="https://376727.selcdn.ru/robomarket/media/633273629f924dc1168f0b26/62fec3e3-9ae4-4137-8d6c-0328540e8751.jpg" alt="" />
+                    <img class="rounded-t-lg" src="https://ru.pinterest.com/pin/831336412495428659/visual-search/?x=16&y=16&w=532&h=490" alt="" />
                 </a>
 
                 <div class="p-5">

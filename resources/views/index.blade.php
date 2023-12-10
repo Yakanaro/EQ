@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="text-center pt-6 sm:pt-8 mb-4 sm:mb-10">
-        <a href="{{ route('register') }}" class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-3xl text-base sm:text-lg px-4 sm:px-6 py-2.5 sm:py-3.5 text-center mb-2 sm:mb-3 inline-block max-w-[200px]">
+        <a href="{{ route('diagnostic.diagnostics') }}" class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-3xl text-base sm:text-lg px-4 sm:px-6 py-2.5 sm:py-3.5 text-center mb-2 sm:mb-3 inline-block max-w-[200px]">
             Пройти диагностику
         </a>
     </div>

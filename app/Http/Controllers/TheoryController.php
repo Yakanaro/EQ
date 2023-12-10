@@ -48,3 +48,4 @@ class TheoryController extends Controller
         return redirect()->route('block.index');
     }
 }
+

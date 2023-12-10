@@ -67,4 +67,6 @@
         </table>
     </div>
 
+    {{ session('message') }}
+
 @endsection
