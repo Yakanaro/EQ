@@ -57,7 +57,7 @@ Route::get('blocks/{block}/edit', [BlockController::class, 'edit'])->name('block
 Route::post('block/{block}', [BlockController::class, 'update'])->name('block.update');
 Route::post('block', [BlockController::class, 'store'])->name('block.store');
 Route::get('blocks/index', [BlockController::class, 'index'])->name('blocks.index');
-Route::get('/blocks/{id}', [BlockController::class, 'show'])->name('blocks.show');
+Route::get('/blocks/{id}', [BlockController::class, 'show'])->name('blocks.show')->middleware('auth');
 Route::post('blocks/{block}/complete', [BlockController::class, 'complete'])->name('blocks.complete');
 
 Route::group([
@@ -87,9 +87,9 @@ Route::prefix('techniques')->as('techniques.')->group(function () {
     Route::post('store', [TechniqueController::class, 'store'])->name('store');
 });
 
-
-Route::get('/me', function () {
-    return view('user.me');
-})->name('me')->middleware('auth');
+Route::get('/me', [UserController::class, 'me'])->name('me')->middleware('auth');
+//Route::get('/me', function () {
+//    return view('user.me');
+//})->name('me')->middleware('auth');
 
 require __DIR__ . '/auth.php';

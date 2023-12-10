@@ -29,15 +29,25 @@
                                       d="M1 5h12m0 0L9 1m4 4L9 9"/>
                             </svg>
                         </a>
-                        @if(auth()->user()->blocks->where('block_id', $block->id)->where('status', true)->first())
+{{--                        @if(auth()->user()->blocks->where('block_id', $block->id)->where('status', true)->first())--}}
+{{--                            <span class="mt-1.5 inline-flex items-center justify-center w-6 h-6 mr-2 text-xs sm:text-sm font-semibold text-gray-800 bg-green-500 rounded-full dark:bg-gray-700 dark:text-gray-300">--}}
+{{--                                <svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">--}}
+{{--                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"--}}
+{{--                                          d="M1 5.917 5.724 10.5 15 1.5"/>--}}
+{{--                                </svg>--}}
+{{--                                <span class="sr-only">Icon description</span>--}}
+{{--                            </span>--}}
+{{--                        @endif--}}
+                        @if(auth()->check() && auth()->user()->blocks->where('block_id', $block->id)->where('status', true)->first())
                             <span class="mt-1.5 inline-flex items-center justify-center w-6 h-6 mr-2 text-xs sm:text-sm font-semibold text-gray-800 bg-green-500 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                                <svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M1 5.917 5.724 10.5 15 1.5"/>
+                            <svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M1 5.917 5.724 10.5 15 1.5"/>
                                 </svg>
                                 <span class="sr-only">Icon description</span>
                             </span>
                         @endif
+
                     </div>
                 </div>
             </div>

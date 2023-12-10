@@ -15,4 +15,9 @@ class Block extends Model
     {
         return $this->hasMany(Theory::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

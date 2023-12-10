@@ -34,22 +34,14 @@
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6 mt-6">
             <h2 class="text-xl font-semibold mb-2">Завершенные блоки</h2>
             <ul class="list-disc pl-5">
-                <li class="mb-2 flex items-center">
-                    <svg class="w-4 h-4 fill-current text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/></svg>
-                    <span>Понимание своих эмоций</span>
-                </li>
-                <li class="mb-2 flex items-center">
-                    <svg class="w-4 h-4 fill-current text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/></svg>
-                    <span>Саморегуляция</span>
-                </li>
-                <li class="mb-2 flex items-center">
-                    <svg class="w-4 h-4 fill-current text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/></svg>
-                    <span>Понимание эмоций других людей</span>
-                </li>
-                <li class="mb-2 flex items-center">
-                    <svg class="w-4 h-4 fill-current text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/></svg>
-                    <span>Управление эмоциями других людей</span>
-                </li>
+                @foreach ($completedBlocks as $block)
+                    <li class="mb-2 flex items-center">
+                        <svg class="w-4 h-4 fill-current text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/>
+                        </svg>
+                        <span>{{ $block->title }}</span>
+                    </li>
+                @endforeach
             </ul>
         </div>
     </div>
