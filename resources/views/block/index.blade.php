@@ -11,7 +11,15 @@
         @foreach($blocks as $block)
             <div class="max-w-fit bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="{{ route('blocks.show', $block->id) }}">
-                    <img class="rounded-t-lg" src="https://376727.selcdn.ru/robomarket/media/633273629f924dc1168f0b26/62fec3e3-9ae4-4137-8d6c-0328540e8751.jpg" alt="" />
+                    @if ($block->id === 1)
+                        <img class="rounded-t-lg" src="https://376727.selcdn.ru/robomarket/media/633273629f924dc1168f0b26/62fec3e3-9ae4-4137-8d6c-0328540e8751.jpg" alt="" />
+                    @elseif ($block->id === 2)
+                        <img class="rounded-t-lg" src="https://семьяишкола.рф/wp-content/uploads/2023/05/7037042-1568x1029.jpg" alt="" />
+                    @elseif ($block->id === 3)
+                        <img class="rounded-t-lg" src="https://gaap.ru/upload/upload/1c_catalog/EQ.jpg" alt="" />
+                    @else
+                        <img class="rounded-t-lg" src="https://376727.selcdn.ru/robomarket/media/633273629f924dc1168f0b26/62fec3e3-9ae4-4137-8d6c-0328540e8751.jpg" alt="" />
+                    @endif
                 </a>
 
                 <div class="p-5">
